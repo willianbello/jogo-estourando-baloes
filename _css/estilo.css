@@ -67,3 +67,38 @@ h1 {
     color: red;
     font-size: 30px;
 }
+
+
+/* ==== animação baloes ===== */
+
+@keyframes animacao {
+    from {
+        transform: rotate(-30deg);
+    }
+    to {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes animacao2 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+#cenario img {
+    animation-name: animacao;
+    animation-direction: alternate;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-timing-function: linear;
+}
+
+#cenario img.animacao2 {
+    animation-name: animacao2;
+}

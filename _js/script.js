@@ -17,6 +17,7 @@ function iniciaJogo() {
     var url = window.location.search;
     var nivelJogo = url.replace("?", "");
 
+
     var tempoSegundos = 0;
 
     switch (nivelJogo) {
@@ -48,6 +49,8 @@ function iniciaJogo() {
     document.getElementById('uiBaloesEstourados').innerHTML = 0;
 
     contagemRegressiva(tempoSegundos);
+
+
 }
 
 function criarBaloes(quantidade) {
@@ -86,6 +89,11 @@ function gameOver() {
 function estourar(e) {
     var id_balao = e.id;
     document.getElementById(id_balao).setAttribute("onmousedown", "");
+
+    document.getElementById(id_balao).onclick = function() {
+        document.getElementById(id_balao).classList.add('animacao2');
+    }
+
     //alterando imagem do balão para estourado
     document.getElementById(id_balao).src = "_imagens/balao_azul_pequeno_estourado.png";
     pontuacao(-1);
